@@ -1,0 +1,91 @@
+{
+  "name": "isit",
+  "version": "1.0.0",
+  "description": "Tests a value’s type against a string like 'positive integer' or 'non-empty map'.",
+  "keywords": [
+    "type",
+    "check",
+    "test",
+    "class",
+    "undefined",
+    "null",
+    "primitive",
+    "scalar",
+    "wrapper",
+    "boolean",
+    "bool",
+    "true",
+    "truthy",
+    "false",
+    "falsey",
+    "empty",
+    "function",
+    "generator",
+    "number",
+    "numeric",
+    "positive",
+    "negative",
+    "sign",
+    "NaN",
+    "integer",
+    "int",
+    "float",
+    "finite",
+    "infinite",
+    "Infinity",
+    "object",
+    "plain",
+    "plain object",
+    "array",
+    "arguments",
+    "buffer",
+    "collection",
+    "map",
+    "set",
+    "WeakMap",
+    "WeakSet",
+    "iterable",
+    "typed array",
+    "Int8Array",
+    "Uint8Array",
+    "Uint8ClampedArray",
+    "Int16Array",
+    "Uint16Array",
+    "Int32Array",
+    "Uint32Array",
+    "Float32Array",
+    "Float64Array",
+    "string",
+    "symbol"
+  ],
+  "author": "John Lamansky",
+  "license": "MIT",
+  "homepage": "https://github.com/lamansky/isit",
+  "repository": "lamansky/isit",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "case-insensitive": "^1.0.0",
+    "class-chain": "^1.0.0",
+    "is-buffer": "^1.1.4",
+    "is-generator-function": "^1.0.6",
+    "is-plain-object": "^2.0.1",
+    "remove-prefix": "^1.0.0",
+    "whitespace-regex": "^0.1.2"
+  },
+  "devDependencies": {
+    "eslint-config-lamansky": "^1.0.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "lamansky",
+    "env": {
+      "mocha": true
+    }
+  }
+}
