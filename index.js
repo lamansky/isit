@@ -13,6 +13,10 @@ const complexTests = ['a', 'an']
 module.exports = isit
 
 function isit (types, value) {
+  if (arguments.length === 1) {
+    return v => isit(types, v)
+  }
+
   types = prepareTypesArg(types)
   if (!types.length) return false
   for (let type of types) {

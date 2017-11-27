@@ -56,7 +56,10 @@
     "Float32Array",
     "Float64Array",
     "string",
-    "symbol"
+    "symbol",
+    "curry",
+    "currying",
+    "curried"
   ],
   "author": "John Lamansky",
   "license": "MIT",

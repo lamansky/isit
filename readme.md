@@ -13,6 +13,7 @@ npm install isit --save
 When calling `isit()`, the first argument is a space-separated string of type tests, and the second argument is the value to be tested. `isit()` returns true only if all tests pass.
 
 ```javascript
+const isit = require('isit')
 isit('non-empty array', [1, 2, 3]) // true
 isit('empty map', new Map()) // true
 isit('positive integer', 1) // true
@@ -25,9 +26,20 @@ Available tests are listed in the “Type Tests” section below. Anything that 
 A test can be individually negated by prefixing it with `non-` or `!`, as in:
 
 ```javascript
+const isit = require('isit')
 isit('non-empty array', [1, 2, 3]) // true
 isit('array !empty', [1, 2, 3]) // true
 isit('empty non-array', '') // true
+```
+
+### Create Curried Functions
+
+If you omit the second argument, a function is returned which runs the test provided in the first argument.
+
+```javascript
+const isObject = require('isit')('non-array object')
+isObject({}) // true
+isObject([]) // false
 ```
 
 ### Individual Test Functions
@@ -35,8 +47,11 @@ isit('empty non-array', '') // true
 All tests are also available as member functions of `isit`, allowing you to run a single test like so:
 
 ```javascript
+const isit = require('isit')
 isit.array([]) // true
-isit.string('test') // true
+
+const isString = require('isit').string
+isString('test') // true
 ```
 
 ## Type Tests
@@ -259,6 +274,8 @@ You can use `isit.a` or `isit.an` to see if an object is an instance of a given 
 You can provide the class itself or the class name as a case-insensitive string.
 
 ```javascript
+const isit = require('isit')
+
 isit.a(Date, new Date()) // true
 isit.a('date', new Date()) // true
 
@@ -272,6 +289,8 @@ isit.an(Error, new TypeError()) // true
 You can also check if a given value is an instance of any one of a list of classes:
 
 ```javascript
+const isit = require('isit')
+
 isit.a([TypeError, ReferenceError], new TypeError()) // true
 isit.a('TypeError ReferenceError', new TypeError()) // true
 ```

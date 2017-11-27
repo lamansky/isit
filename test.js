@@ -16,6 +16,17 @@ describe('isit', function () {
     assert(!isit('empty array', [1]))
   })
 
+  it('should return a function if there is no second argument', function () {
+    const isArray = isit('array')
+    assert.strictEqual(typeof isArray, 'function')
+    assert(isArray([]))
+    assert(!isArray({}))
+  })
+
+  it('should support an undefined second argument', function () {
+    assert.strictEqual(isit('undefined', undefined), true) // eslint-disable-line no-undefined
+  })
+
   for (const prefix of ['non-', '!']) {
     it(`should accept string with a test negated with \`${prefix}\``, function () {
       assert(isit(prefix + 'empty array', [1]))
