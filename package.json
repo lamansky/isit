@@ -66,8 +66,9 @@
   "homepage": "https://github.com/lamansky/isit",
   "repository": "lamansky/isit",
   "main": "index.js",
+  "files": ["x.js"],
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=7.0.0"
   },
   "dependencies": {
     "case-insensitive": "^1.0.0",

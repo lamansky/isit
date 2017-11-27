@@ -1062,3 +1062,10 @@ describe('isit', function () {
     })
   })
 })
+
+describe('isit/x', function () {
+  it('should support adding an additional test', function () {
+    const isitx = require('./x')({zero: val => val === 0})
+    assert(isitx('negative zero', -0))
+  })
+})

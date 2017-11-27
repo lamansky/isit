@@ -297,13 +297,14 @@ isit.a('TypeError ReferenceError', new TypeError()) // true
 
 ## Advanced Usage
 
-### Adding Tests
+### Adding or Overriding Tests
 
-You can add new tests by monkey-patching them as member functions of `isit`. For example:
+You can add new tests, or override existing ones, by requiring `isit/x` and calling it as a function with the additional tests as an object argument. For example:
 
 ```javascript
-const isit = require('isit')
-isit.zero = value => value === 0
+const isit = require('isit/x')({
+  zero: value => value === 0
+})
 isit('negative zero', -0) // true
 isit('non-zero integer', 1) // true
 ```
